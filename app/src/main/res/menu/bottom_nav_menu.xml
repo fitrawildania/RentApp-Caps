@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/navigation_order"
+        android:icon="@drawable/ic_baseline_menu_24"
+        android:title="Order"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"
+        android:iconTint="@color/white"/>
+
+</menu>
