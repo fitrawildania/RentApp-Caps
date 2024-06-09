@@ -24,7 +24,8 @@
             android:id="@+id/btn_home_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/color2"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="All"/>
 
@@ -32,7 +33,8 @@
             android:id="@+id/btn_home_mobil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Mobil"/>
 
@@ -40,7 +42,8 @@
             android:id="@+id/btn_home_motor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Motor"/>
 
@@ -48,7 +51,8 @@
             android:id="@+id/btn_home_bus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Bus"/>
 
@@ -56,7 +60,8 @@
             android:id="@+id/btn_home_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Star"/>
 
@@ -64,14 +69,15 @@
             android:id="@+id/btn_home_lowprices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:backgound="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Low Prices"/>
     </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Most Rented"
         android:textSize="20sp"
