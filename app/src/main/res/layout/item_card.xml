@@ -37,9 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Spesifikasi"
-                android:textStyle="bold"
                 android:textSize="14sp"
-                android:textColor="@color/gray" />
+                android:textColor="@color/black" />
 
             <!-- Nama Pemilik -->
             <TextView
@@ -48,9 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Nama Pemilik"
-                android:textStyle="bold"
                 android:textSize="14sp"
-                android:textColor="@color/gray" />
+                android:textColor="@color/black" />
 
             <!-- harga -->
             <LinearLayout

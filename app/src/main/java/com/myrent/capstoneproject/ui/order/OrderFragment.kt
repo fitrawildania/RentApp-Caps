@@ -4,35 +4,40 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.myrent.capstoneproject.R
 import com.myrent.capstoneproject.databinding.FragmentOrderBinding
 
 class OrderFragment : Fragment() {
 
     private var _binding: FragmentOrderBinding? = null
+    private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val orderViewModel =
-            ViewModelProvider(this).get(OrderViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_order, container, false)
 
-        _binding = FragmentOrderBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        viewPager = view.findViewById(R.id.viewPager)
+        tabLayout = view.findViewById(R.id.tabLayout)
 
-        val textView: TextView = binding.textDashboard
-        orderViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Dalam Proses"
+                else -> "Riwayat"
+            }
+        }.attach()
+
+        return view
     }
 
     override fun onDestroyView() {
