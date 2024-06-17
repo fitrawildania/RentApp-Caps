@@ -1,5 +1,6 @@
 package com.myrent.capstoneproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -29,4 +30,5 @@ class MainActivity : AppCompatActivity() {
         val bottomNavView: BottomNavigationView = binding.bottomNav
         NavigationUI.setupWithNavController(bottomNavView, navController)
     }
+
 }

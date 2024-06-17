@@ -97,7 +97,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
+    private fun navigateToMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()  // Close the LoginActivity
+    }
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         FirebaseAuth.getInstance().signInWithCredential(credential)
@@ -106,10 +110,9 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = FirebaseAuth.getInstance().currentUser
                     Toast.makeText(this, "Authentication Success.", Toast.LENGTH_SHORT).show()
-                    // Update UI or navigate to another activity
+                    navigateToMain()// Update UI or navigate to another activity
 
-                    val intent = Intent(this, HomeFragment::class.java)
-                    startActivity(intent)
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(this, "Authentication Failed.", Toast.LENGTH_SHORT).show()
@@ -125,8 +128,8 @@ class LoginActivity : AppCompatActivity() {
                     user?.let {
                         val name = it.displayName ?: "User"
                         Toast.makeText(this, "Login Berhasil $name", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, HomeFragment::class.java)
-                        startActivity(intent)
+                        navigateToMain()
+
                     }
                 } else {
                     Toast.makeText(this, "Login Gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
