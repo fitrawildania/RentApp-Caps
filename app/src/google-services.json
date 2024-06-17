@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "934199616666",
+    "project_id": "myrent-1d917",
+    "storage_bucket": "myrent-1d917.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934199616666:android:e1fd5fbb95dad46fc9eb23",
+        "android_client_info": {
+          "package_name": "com.myrent.capstoneproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMaLmcblBT4vLrey9D2YAi-d8fcLvKN8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1",
+
+}
