@@ -43,6 +43,7 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
             //Validasi Email yang tidak sesuai
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.rgtEmail.error = "Email Tidak Valid"
