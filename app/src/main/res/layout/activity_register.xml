@@ -127,24 +127,6 @@
         android:layout_marginBottom="173dp"
         android:background="@drawable/registerbutton" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="142dp"
-        android:text="- Or Register With -"
-        android:textColor="@color/color3" />
 
-    <ImageView
-        android:id="@+id/btngoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="111dp"
-        android:layout_marginBottom="70dp"
-        android:background="@drawable/btn_registergoogle" />
 
 </RelativeLayout>

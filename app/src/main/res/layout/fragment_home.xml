@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="All"/>
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Mobil"/>
 
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Motor"/>
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Bus"/>
 
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Star"/>
 
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:backgound="@drawable/btn_cancel_bg"
+            android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
             android:text="Low Prices"/>
     </LinearLayout>
@@ -88,5 +88,5 @@
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_card"/>
+        tools:listitem="@layout/item_card" />
 </LinearLayout>
