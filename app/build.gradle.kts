@@ -62,4 +62,15 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     //TabLayout
     implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    //model untuk tensorlite
+    implementation ("org.tensorflow:tensorflow-lite:2.8.0")
+    implementation ("org.tensorflow:tensorflow-lite-support:0.3.1")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
 }

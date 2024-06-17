@@ -11,12 +11,10 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:scrollbars="none">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:padding="16dp"
         android:orientation="horizontal">
 
@@ -24,10 +22,10 @@
             android:id="@+id/btn_home_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/transparent"
             android:background="@drawable/btn_cancel_bg"
-            android:textColor="@color/black"
-            android:text="All"/>
+            android:backgroundTint="@android:color/transparent"
+            android:text="All"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btn_home_mobil"
@@ -63,7 +61,7 @@
             android:backgroundTint="@android:color/transparent"
             android:background="@drawable/btn_cancel_bg"
             android:textColor="@color/black"
-            android:text="Star"/>
+            android:text="Top Rating"/>
 
         <Button
             android:id="@+id/btn_home_lowprices"
@@ -82,11 +80,12 @@
         android:text="Most Rented"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginLeft="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_card" />
+        tools:listitem="@layout/item_card"/>
 </LinearLayout>
