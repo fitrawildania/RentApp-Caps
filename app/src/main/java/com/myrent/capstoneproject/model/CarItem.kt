@@ -1,9 +1,10 @@
 package com.myrent.capstoneproject.model
 
 data class CarItem(
-    val name: String,
-    val spesifikasi: String,
-    val namapemilik: String,
-    val harga: String,
-    val imagecar: String // Assuming this is a URL from the API
+    val merk_kendaraan: String,
+    val Transmisi: String,
+    val id_pemilik: String,
+    val harga_per_hari: String,
+    val kapasitas: Int,
+    val imagecar: Int
 )

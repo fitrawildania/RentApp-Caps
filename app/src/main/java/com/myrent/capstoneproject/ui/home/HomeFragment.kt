@@ -1,26 +1,23 @@
 package com.myrent.capstoneproject.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.myrent.capstoneproject.R
-import com.myrent.capstoneproject.data.RetrofitClient
+import com.myrent.capstoneproject.ui.detail.DetailActivity
 import com.myrent.capstoneproject.databinding.FragmentHomeBinding
-import kotlinx.coroutines.launch
+import com.myrent.capstoneproject.model.CarItem
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var homeAdapter: HomeAdapter
-    private val apiService = RetrofitClient.apiService
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,11 +30,20 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeAdapter = HomeAdapter()
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+        homeAdapter = HomeAdapter { carItem ->
+            openDetailActivity(carItem)
+        }
         binding.rvHome.layoutManager = LinearLayoutManager(context)
         binding.rvHome.adapter = homeAdapter
 
+        homeViewModel.carItems.observe(viewLifecycleOwner, { items ->
+            homeAdapter.updateItems(items)
+        })
+
         setupFilterButtons()
+        fetchFilteredItems("")
     }
 
     private fun setupFilterButtons() {
@@ -50,15 +56,19 @@ class HomeFragment : Fragment() {
     }
 
     private fun fetchFilteredItems(filter: String) {
-        lifecycleScope.launch {
-            try {
-                val items = apiService.getCars(filter)
-                homeAdapter.setItems(items)
-            } catch (e: Exception) {
-                // Handle error
-                e.printStackTrace()
-            }
+        homeViewModel.fetchCars(filter)
+    }
+
+    private fun openDetailActivity(carItem: CarItem) {
+        val intent = Intent(context, DetailActivity::class.java).apply {
+            putExtra("carName", carItem.merk_kendaraan)
+            putExtra("ownerName", carItem.id_pemilik)
+            putExtra("about", carItem.Transmisi)
+            putExtra("spesifikasi", carItem.Transmisi)
+            putExtra("seatCount", carItem.kapasitas)
+            putExtra("carImageResId", carItem.imagecar)
         }
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
