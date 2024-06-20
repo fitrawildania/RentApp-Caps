@@ -37,6 +37,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+
 }
 
 dependencies {
@@ -72,5 +74,9 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    // For using the Midtrans Sandbox
+    implementation ("com.midtrans:uikit:2.0.0-SANDBOX") // change the number to the latest version
+    implementation ("com.midtrans:uikit:1.23.1")
 
 }
