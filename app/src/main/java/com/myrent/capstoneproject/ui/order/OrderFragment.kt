@@ -5,39 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.myrent.capstoneproject.R
 import com.myrent.capstoneproject.databinding.FragmentOrderBinding
 
 class OrderFragment : Fragment() {
 
     private var _binding: FragmentOrderBinding? = null
-    private lateinit var viewPager: ViewPager2
-    private lateinit var tabLayout: TabLayout
-
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val view = inflater.inflate(R.layout.fragment_order, container, false)
+    ): View? {
+        _binding = FragmentOrderBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        viewPager = view.findViewById(R.id.viewPager)
-        tabLayout = view.findViewById(R.id.tabLayout)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        val orderPagerAdapter = OrderPagerAdapter(requireActivity())
+        binding.viewPager.adapter = orderPagerAdapter
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Dalam Proses"
-                else -> "Riwayat"
+                1 -> "Riwayat"
+                else -> null
             }
         }.attach()
-
-        return view
     }
 
     override fun onDestroyView() {

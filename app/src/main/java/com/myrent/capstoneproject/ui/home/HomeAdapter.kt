@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.myrent.capstoneproject.databinding.ItemCardBinding
 import com.myrent.capstoneproject.model.CarItem
+import com.myrent.capstoneproject.model.OwnersItem
 
 class HomeAdapter(private val onItemClicked: (CarItem) -> Unit) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     private val items = mutableListOf<CarItem>()
+    private val owners = mutableListOf<OwnersItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,6 +26,12 @@ class HomeAdapter(private val onItemClicked: (CarItem) -> Unit) : RecyclerView.A
     fun updateItems(newItems: List<CarItem>) {
         items.clear()
         items.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
+    fun updateOwners(newOwners: List<OwnersItem>){
+        owners.clear()
+        owners.addAll(newOwners)
         notifyDataSetChanged()
     }
 

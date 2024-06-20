@@ -42,6 +42,10 @@ class HomeFragment : Fragment() {
             homeAdapter.updateItems(items)
         })
 
+        homeViewModel.ownersItems.observe(viewLifecycleOwner, { owners ->
+            homeAdapter.updateOwners(owners)
+        })
+
         setupFilterButtons()
         fetchFilteredItems("")
     }
@@ -56,7 +60,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun fetchFilteredItems(filter: String) {
-        homeViewModel.fetchCars(filter)
+        homeViewModel.fetchCarsItems(filter)
     }
 
     private fun openDetailActivity(carItem: CarItem) {

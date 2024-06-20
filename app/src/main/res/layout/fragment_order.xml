@@ -8,13 +8,21 @@
     android:orientation="vertical"
     tools:context=".ui.order.OrderFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_order"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
+    <TextView
+        android:id="@+id/tv_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
         android:text="Order"
-        android:textColor="@color/black" />
+        android:textColor="@color/cyan"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
 
     <!-- Tab Layout -->
     <com.google.android.material.tabs.TabLayout

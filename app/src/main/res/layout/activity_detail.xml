@@ -27,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:text="Detail"
         android:textColor="@color/cyan"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <!-- Car Image -->
@@ -166,7 +166,7 @@
         android:layout_below="@id/cv_spes"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/cyan"
-        android:text="RENT"
+        android:text="Redirect to Whatsapp"
         android:textColor="#FFF"
         android:textSize="18sp"
         android:textStyle="bold" />
