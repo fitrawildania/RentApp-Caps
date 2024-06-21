@@ -17,3 +17,15 @@ data class OwnersItem(
     val nmr_tlp: String,
     val email_pemilik: String
 )
+
+data class Transaksi(
+    val idTransaksi: String,
+    val idPemilik: Int,
+    val idPengguna: String,
+    val tanggalSewa: String,
+    val tanggalKembali: String,
+    val durasiSewa: Int,
+    val harga: String,
+    val totalSewa: String,
+    val metodePembayaran: String
+)

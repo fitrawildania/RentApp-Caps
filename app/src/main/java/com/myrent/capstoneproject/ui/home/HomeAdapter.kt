@@ -1,5 +1,6 @@
 package com.myrent.capstoneproject.ui.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,7 @@ class HomeAdapter(private val onItemClicked: (CarItem) -> Unit) : RecyclerView.A
         notifyDataSetChanged()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateOwners(newOwners: List<OwnersItem>){
         owners.clear()
         owners.addAll(newOwners)

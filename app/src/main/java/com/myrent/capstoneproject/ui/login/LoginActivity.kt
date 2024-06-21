@@ -16,6 +16,7 @@ import com.myrent.capstoneproject.MainActivity
 import com.myrent.capstoneproject.R
 import com.myrent.capstoneproject.databinding.ActivityLoginBinding
 import com.myrent.capstoneproject.ui.home.HomeFragment
+import com.myrent.capstoneproject.ui.modeling.ModelingActivity
 
 class LoginActivity : AppCompatActivity() {
     private val RC_SIGN_IN = 9001  // Request code for Google Sign-In
@@ -75,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun googlesignin() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken(getString(R.string.login_failed))
             .requestEmail()
             .build()
 
@@ -98,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun navigateToMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, ModelingActivity::class.java)
         startActivity(intent)
         finish()  // Close the LoginActivity
     }
